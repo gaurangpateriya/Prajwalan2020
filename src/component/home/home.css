@@ -1,0 +1,14 @@
+.cube{
+    top:50%;
+    left:50%;
+    border:black;
+    position:absolute;
+    margin-left: -250px;
+    margin-top:-200px;
+    height:400px;
+    width: 500px;
+}
+
+.cube:focus {
+    border: none;
+  }
