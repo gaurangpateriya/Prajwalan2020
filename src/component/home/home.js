@@ -27,7 +27,7 @@ import Menu from '@material-ui/icons/Menu';
               </IconButton>
               </div>
                <ThemeProvider theme={theme.dark}>
-                  <Intro />
+                  <Intro/>
               </ThemeProvider>
               <div style={{maxWidth:'350px',right:0,position:'absolute',padding:'16px'}}>
                 <img src={window.innerWidth<'500'?GcoeaSmall: Gcoea} width={window.innerWidth<'500'?"30%": "100%"}/>
