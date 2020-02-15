@@ -6,112 +6,32 @@ import DecoderText from './DecoderText';
 import Svg from './Svg';
 import { reflow } from '../../utils/transition';
 import prerender from '../../utils/prerender';
-
-class Counter1 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {show: true};
-  }
-  
-  componentDidMount() {
-    this.interval = setInterval(() => {
-       this.setState({show: !this.state.show });        
-      
-    }, 4000);
-  }
-  
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-  
-  render() {
-    return (  this.state.show?  (<Transition
-      appear={!prerender}
-      in={this.state.show}
-      timeout={3000}
-      onEnter={reflow}
-    >
-      {status => (
-        <React.Fragment>
-          
-          <IntroText>
-            <IntroTitle>
-              <IntroTitleRow>
-                  <IntroTitleWord
-                    aria-hidden
-                    secondary
-                    delay="0.1s"
-                    status={status}
-                  >
-                     7th - 8th March 2020.
-                   
-                  </IntroTitleWord>
-              </IntroTitleRow>
-            </IntroTitle>
-           
-          </IntroText>
-        
-        </React.Fragment>
-      )}
-    </Transition>):null
-    )
-  }
+function test(show12) {
+  return(show12?<div>hello</div>:null)
 }
-class Counter2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {show: false};
-  }
-  
-  componentDidMount() {
-    this.interval = setInterval(() => {
-       this.setState({show: !this.state.show });        
-      
-    }, 4000);
-  }
-  
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-  
-  render() {
-    return (  this.state.show?  (<Transition
-      appear={!prerender}
-      in={this.state.show}
-      timeout={3000}
-      onEnter={reflow}
-    >
-      {status => (
-        <React.Fragment>
-          
-          <IntroText>
-            <IntroTitle>
-              <IntroTitleRow>
-                  <IntroTitleWord
-                    aria-hidden
-                    secondary
-                    delay="0.1s"
-                    status={status}
-                  >
-                    Central India's Largest Technical Festival.
-                   
-                  </IntroTitleWord>
-              </IntroTitleRow>
-            </IntroTitle>
-           
-          </IntroText>
-        
-        </React.Fragment>
-      )}
-    </Transition>):null
-    )
-  }
-}
+var show1=false
 
 class Intro extends React.Component {
+  state={
+    show:false
+  }
+  change=()=>{
+    show1=!show1
+  }
+  Disp=()=>{
+    this.toggle(this.change)
+   return test(show1)
+  }
+  toggle= (callback)=> {
+    setTimeout(function () {
+        callback();
+    }, 1000);
+}
+
   render(){
   const { id, sectionRef, scrollIndicatorHidden, ...rest } = this.props;
   const titleId = `${id}-title`;
+  const {show} = this.state
   return (
     <IntroContent
       ref={sectionRef}
@@ -120,26 +40,55 @@ class Intro extends React.Component {
       tabIndex={-1}
       {...rest}
     >
-       <Transition
-      appear={!prerender}
-      in={!prerender}
-      timeout={3000}
-      onEnter={reflow}
-    >
-      {status => (
-        <React.Fragment>
-          
-          <IntroText>
-          <IntroName status={status} >
-              <DecoderText text=" Prajwalan 20" start={!prerender} offset={120} />
-            </IntroName>
+      <Transition
+        appear={!prerender}
+        in={!prerender}
+        timeout={3000}
+        onEnter={reflow}
+      >
+        {status => (
+          <React.Fragment>
+            <IntroText>
+            <IntroName status={status} id={titleId}>
+                <DecoderText text=" Prajwalan 20" start={!prerender} offset={120} />
+              </IntroName>
+              <IntroTitle>
+                <IntroTitleLabel> 7th - 8th March.</IntroTitleLabel>
+                <IntroTitleRow aria-hidden prerender={prerender}>
+                <Transition
+                    appear
+                    onEnter={reflow}
+                   >
+                  <IntroTitleWord status={status} delay="0.2s">
+                  7th - 8th March
+                      </IntroTitleWord>
+                      </Transition>
+                </IntroTitleRow>
+                <IntroTitleRow>
+                  <Transition
+                    appear
+                    timeout={{ enter: 3000, exit: 2000 }}
+                    onEnter={reflow}
+                  >
+                    <IntroTitleWord
+                      aria-hidden
+                      secondary
+                      delay="0.5s"
+                      status={status}
+                    >
+                        EVENTS
+                     
+                    </IntroTitleWord>
+                  </Transition>
+                </IntroTitleRow>
+              </IntroTitle>
+             
             </IntroText>
-            </React.Fragment>
-      )}
+          
+          </React.Fragment>
+        )}
       </Transition>
-       <Counter1 />
-       <Counter2 />
-     </IntroContent>
+    </IntroContent>
   );}
 }
 
@@ -173,12 +122,14 @@ const IntroText = styled.header`
 
 const IntroName = styled.h1`
   text-transform: uppercase;
-  font-size: 25px;
-  letter-spacing: 0.3em;
+  font-size: 35px;
+  letter-spacing: 0.1em;
   color: ${props => rgba(props.theme.colorText, 0.8)};
   margin-bottom: 35px;
   margin-top: 0;
   font-weight: 500;
+  margin-left:auto;
+  margin-right:auto;
   line-height: 1;
   margin-top: 30px;
   font-family: 'Proza Libre', sans-serif;
@@ -297,7 +248,9 @@ const IntroTitleWord = styled.span`
   line-height: 1;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
-  font-size: 19px;
+  font-size: 30px;
+  margin-left:auto;
+  margin-right:auto;
   animation-timing-function: ${props => props.theme.curveFastoutSlowin};
   color: ${props => rgba(props.theme.colorTitle, 0)};
   transition: opacity 0.5s ease 0.4s;
