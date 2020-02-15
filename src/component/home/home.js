@@ -20,7 +20,7 @@ toggleDrawer=()=>{
           <div >        
             <Drawer open={showDrawer} toggleDrawer={this.toggleDrawer}/>
             <Route path="/" exact render={()=><HomeMain toggleDrawer={this.toggleDrawer}/>}/> 
-            <Route path="/events" exact render={()=><EventPage toggleDrawer={this.toggleDrawer}/>}/> 
+            <Route path="/events"  render={()=><EventPage toggleDrawer={this.toggleDrawer}/>}/> 
             
           </div>
         )

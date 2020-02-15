@@ -48,7 +48,7 @@ export default function SwipeableTemporaryDrawer(props) {
     >
       <List>
         {['Home', 'Events', 'Workshops', 'Sponsors'].map((text, index) => (
-          <Link to={`/${text}`} style={{color:'white',textDecoration:'none'}} onClick={props.toggleDrawer}>
+          <Link to={`/${text!=="Home"?text:""}`} style={{color:'white',textDecoration:'none'}} onClick={props.toggleDrawer}>
           <ListItem button style={{color:'white'}} key={text}>
             <ListItemIcon style={{color:'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
