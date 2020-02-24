@@ -2,13 +2,23 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
+import Praj from '../../media/logoN.png'
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Home from '@material-ui/icons/Home';
+import Events from '@material-ui/icons/Event';
+import Workshops from '@material-ui/icons/Work';
+import Gallery from '@material-ui/icons/PhotoLibrary';
+import Contact from '@material-ui/icons/ContactPhone';
+import Sponsors from '@material-ui/icons/Money';
+import About from '@material-ui/icons/Info';
+import Theme from '@material-ui/icons/LibraryMusic';
 import {
   Switch,
   Route,
@@ -24,6 +34,9 @@ const useStyles = makeStyles({
   },
 });
 
+const Element=({item})=>{
+  return(item==="Home"?<Home/>:(item==="Events"?<Events/>:(item==="Workshops"?<Workshops/>:(item==="Sponsors"?<Sponsors/>:(item==="Gallery"?<Gallery/>:(item==="Contact Us"?<Contact/>:(item==="About Us"?<About/>:<Theme/>)))))))
+}
 export default function SwipeableTemporaryDrawer(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -50,7 +63,7 @@ export default function SwipeableTemporaryDrawer(props) {
         {['Home', 'Events', 'Workshops', 'Sponsors'].map((text, index) => (
           <Link to={`/${text!=="Home"?text:""}`} style={{color:'white',textDecoration:'none'}} onClick={props.toggleDrawer}>
           <ListItem button style={{color:'white'}} key={text}>
-            <ListItemIcon style={{color:'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon style={{color:'white'}}> <Element item={text} /> </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem></Link>
         ))}
@@ -60,7 +73,7 @@ export default function SwipeableTemporaryDrawer(props) {
         {['Gallery', 'Contact Us', 'About Us', 'Theme Songs'].map((text, index) => (
           <Link to={`/${text}`} style={{color:'white',textDecoration:'none'}}>
           <ListItem button  key={text}>
-            <ListItemIcon style={{color:'white'}}>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon style={{color:'white'}}><Element item={text} /> </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem></Link>
         ))}
@@ -76,9 +89,12 @@ export default function SwipeableTemporaryDrawer(props) {
         onOpen={toggleDrawer('left', true)}
       >
         <div
-           style={{backgroundColor:'#120118',color:'white',height:'100%'}}
+           style={{backgroundImage: "linear-gradient(#141e30,#243b55)",color:'white',height:'100%'}}
            >
-        <div className="prajTitle">Prajwalan 2020</div>
+        <div className="prajIconContainer"> 
+         <IconButton color="primary" aria-label="upload picture" component="span" className="prajIcon">
+                <img src={Praj} style={{width:'70px'}}/>
+                </IconButton></div>
         {sideList('left')}
         </div>
       </SwipeableDrawer>

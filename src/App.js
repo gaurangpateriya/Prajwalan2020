@@ -17,7 +17,7 @@ function App() {
       style={{
         position:'absolute',
         width:'100%',
-        height:'100%'
+        height:'300%'
       }}
                 params={Params} />
      <Home/>

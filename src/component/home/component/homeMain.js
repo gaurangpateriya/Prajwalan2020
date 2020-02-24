@@ -10,6 +10,7 @@ import Praj from '../../../media/logoN.png'
 import  {  ThemeProvider } from 'styled-components/macro';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/icons/Menu';
+import Share from './share/share';
   export default class HomeMain extends React.Component{
 
     render() {
@@ -32,7 +33,9 @@ import Menu from '@material-ui/icons/Menu';
               </ThemeProvider>
               <div style={{maxWidth:'350px',right:0,position:'absolute',padding:'16px'}}>
                 <img src={window.innerWidth<'500'?null: Gcoea} width={window.innerWidth<'500'?"30%": "100%"}/>
-              </div> 
+              </div>
+
+              <Share/>
             </div>
           </div>
         )

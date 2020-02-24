@@ -11,3 +11,15 @@ text-transform: uppercase;
   font-family: 'Proza Libre', sans-serif;
   opacity: 1;
 }
+.MuiBackdrop-root{ 
+  background:rgba(0,0,0,0.8);
+  filter:blur(4px) !important;
+-webkit-filter: blur(8px);
+}
+.prajIcon{
+  left:35%;
+}
+.prajIconContainer{
+  margin-top: 30px;
+  margin-bottom: 17px;
+}
