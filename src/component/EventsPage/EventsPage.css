@@ -28,12 +28,18 @@ animation: animate 5s cubic-bezier(.64, -.56, .36, 1.56) infinite;
 }
 
 
-
+.MuiTab-textColorSecondary.Mui-selected{
+    color: white !important;
+    background-color: #f50057 !important;
+    border-radius: 5px;
+    width: 50%;
+}
 
 
 .event-container{
     position: relative;
     width: 80%;
+    margin-top: 0px;
     margin: 240px auto;
     display: flex;
     flex-wrap: wrap;
@@ -44,9 +50,8 @@ animation: animate 5s cubic-bezier(.64, -.56, .36, 1.56) infinite;
     position: relative;
     width: 300px;
     height: 300px;
-    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094);
+    background:gray;
     box-sizing: border-box;
-    animation: borderAnimation 10s forwards infinite;
     overflow: hidden;
     background-size: 400%;
 
@@ -68,32 +73,19 @@ animation: animate 5s cubic-bezier(.64, -.56, .36, 1.56) infinite;
     position: absolute;
     top:-3px;
     left:-3px;
-    background: linear-gradient(45deg,#fb0094,#0000ff,#00ff00,#ffff00,#ff0000,#fb0094);
-    width: calc(100% + 6px);
+   width: calc(100% + 6px);
     z-index: 0;
     background-size: 400%;
     height: calc(100% + 6px);
-    animation: borderAnimation 10s forwards infinite;
 }
-@keyframes borderAnimation{
-    0%{
-        background-position: 0 0 ;
-    }
-    50%{
-        background-position: 400% 0 ;
-    }
-    100%{
-        background-position: 0 0 ;
-    }
-    
-}
+
 .event-box .event-icon{
     position: absolute;
     top:0;
     left:0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg,#fb0094,#0000ff);
+    background:gray;
     transition: 0.5s;
     z-index: 1;
 }

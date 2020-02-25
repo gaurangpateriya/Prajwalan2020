@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 
 import Home from './component/home/home'
-import EventsPage from './component/EventsPage/EventsPage'
 function App() {
   return (
     <div className="App">
@@ -18,10 +17,10 @@ function App() {
       style={{
         position:'absolute',
         width:'100%',
-        height:'100%'
+        height:'300%'
       }}
                 params={Params} />
-     <EventsPage/>
+     <Home/>
     </div>
   );
 }

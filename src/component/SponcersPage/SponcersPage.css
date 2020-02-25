@@ -1,0 +1,111 @@
+.sponcers-page-heading {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+.sponcers-page-subheading {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.main-slider{
+    width: 100%;
+    margin:0 10%;
+    height: 80vh;
+    align-items: center;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+}
+.main-slider-img{
+    width:10%;
+    
+    height: 10%;
+}
+
+.sponser-page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin:0 1vh;
+}
+.sponsor-card-box{
+    width:30vh;
+    height: 30vh;
+    position: relative;
+    margin: 5vh 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+
+}
+.sponsor-card-img{
+    width:100%;
+    height:100%;
+}
+.sponsor-card-img-div{
+    position: absolute;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: #000;
+    transition: 0.5s;
+}
+.sponsor-card-box:hover .sponsor-card-img-div{
+    transform:translateY(-100px);
+}
+.sponsor-card-img-div img{
+    transition: 0.5s;
+
+}
+.sponsor-card-box:hover .sponsor-card-img-div img{
+    opacity: 0.5;
+}
+.sponsor-card-details{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: #fff;
+    text-align: center;
+    width: 100%;
+    height:100px;
+    box-sizing: border-box;
+}
+.sponsor-card-details h2{
+    font-size: 1.2rem;
+    margin:0;
+    color: #333;
+    text-align: center;
+    z-index: 1;
+    padding: 0;
+}
+.sponsor-card-details h2 p{
+    color: #222;
+    margin-top: 0;
+    text-align: center;
+}
+
+.drawer{
+    border: none;
+    width: 5vh;
+    height:5vh;
+    margin: 3vh;
+    cursor: pointer;
+ }
+ .drawer img{
+    width: 100%;
+    height:100%;
+ }
