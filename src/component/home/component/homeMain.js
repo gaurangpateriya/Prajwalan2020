@@ -11,6 +11,7 @@ import  {  ThemeProvider } from 'styled-components/macro';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/icons/Menu';
 import Share from './share/share';
+import Ball from './Ball'
   export default class HomeMain extends React.Component{
 
     render() {
@@ -18,6 +19,7 @@ import Share from './share/share';
           <div >        
             <div className="cube_c" >
             <Cube/>
+            <Ball/>
             </div>
             <div style={{width:'100%',display:'flex'}}>
               <div style={{display:'flex',flexDirection:'column', margin:"10px"}}>

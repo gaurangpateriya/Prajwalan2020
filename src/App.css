@@ -1,14 +1,19 @@
 .App{
   height:100%;
   width:100%;
+  background-color: hsla(180,0%,50%,0.25);
+  position: absolute;
 }
 body{
-  background-image: linear-gradient(#141e30,#243b55) ;
+  background-image: url("back.jpg");
   width: 100%;
   height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;  
+}
+.main{
+  display:none
 }
 .App-logo {
   height: 40vmin;

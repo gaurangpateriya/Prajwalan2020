@@ -16,7 +16,8 @@ import Gallery from '../gallery/gallery';
   componentDidMount(){
     if(!this.state.hidden){
       this.setState({hidden:true})
-      document.getElementById('main1').style.visibility="hidden";
+      setTimeout(function(){   document.getElementById('main1').style.visibility="hidden"; }, 3000);
+   
         } }
 toggleDrawer=()=>{
   this.setState({showDrawer:!this.state.showDrawer})

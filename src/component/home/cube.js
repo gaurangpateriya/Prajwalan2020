@@ -3,8 +3,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import logo from '../../media/logoN.jpg'
 
-
-
 class Cube extends Component {
   componentDidMount() {
     this.sceneSetup();
@@ -106,7 +104,6 @@ export default class Container extends React.Component {
     return (
       <>
          <Cube />
-      
       </>
     );
   }
