@@ -15,6 +15,7 @@ class Event extends Component {
   componentWillMount() {
     
     this.eventDetails = this.props.event;
+    console.log(this.eventDetails)
   }
 
   render() {
@@ -25,7 +26,7 @@ class Event extends Component {
       <div className='event-box-parent'>
         <div className="event-box">
           <div className='event-icon'>
-            <img src={img.img1} className="event-img" />
+            <img src={img} className="event-img" />
           </div>
           <div className='event-content'>
             <h2>{name}</h2>

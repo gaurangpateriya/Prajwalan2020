@@ -43,7 +43,7 @@ class Counter1 extends React.Component {
                     delay="0.1s"
                     status={status}
                   >
-                     7th - 8th March 2020.
+                     6th - 7th March 2020.
                    
                   </IntroTitleWord>
               </IntroTitleRow>

@@ -19,7 +19,7 @@ import Ball from './Ball'
           <div >        
             <div className="cube_c" >
             <Cube/>
-            <Ball/>
+            {/* <Ball/> */}
             </div>
             <div style={{width:'100%',display:'flex'}}>
               <div style={{display:'flex',flexDirection:'column', margin:"10px"}}>
